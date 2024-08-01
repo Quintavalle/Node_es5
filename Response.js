@@ -1,9 +1,10 @@
-import http from 'node:http';
+const http = require('http');
 
 const server = http.createServer((req, res) => {
     res.statusCode = 200;
     res.setHeader('Content-Type', 'text/html');
-    res.end('<html><body><h1>Welcome to My Server!</h1><p>This is my custom message.</p></body></html>');
+    res.write('<html><body><h1>Hello, World!</h1></body></html>');
+    res.end();
 });
 
 server.listen(3000, () => {
